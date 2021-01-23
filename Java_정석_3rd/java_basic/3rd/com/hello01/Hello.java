@@ -24,12 +24,21 @@ class Hello {
             input_num = Integer.parseInt(input);
             // FINAL_NUM = 300; java: variable FINAL_NUM might already have been assigned
             // FINAL_FLOAT = 1.14f; java: variable FINAL_NUM might already have been assigned
+            int[] copy_arr = new int[arr.length*2];
+
             for (int i = 0; i < arr.length; i++) {
                 arr[i] = i;
             }
 
+            System.arraycopy(arr,0,copy_arr, 1, arr.length);
+            //System.arraycopy(arr,0,copy_arr, arr.length, arr.length);
+
+            int[][] test = new int[3][];
+            System.out.println("test.length = " + test.length);
+
             for (int j = 0; j < arr.length; j++) {
                 System.out.printf("arr[%d] = %d\n", j, arr[j]);
+                System.out.printf("copy_arr[%d] = %d\n", j, copy_arr[j]);
             }
         } finally {
             System.out.println("input = " + input_num);
